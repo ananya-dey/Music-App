@@ -4,19 +4,18 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import {AppRouting} from "./app-routing.module";
-import {SearchService} from "./search/search.service";
+import {SearchModule} from "./search/search.module";
+import {ArtistModule} from "./artist/artist.module";
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
     NavComponent,
     HomeComponent,
     AboutComponent
@@ -26,9 +25,11 @@ import {SearchService} from "./search/search.service";
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    AppRouting
+    AppRouting,
+    SearchModule,
+    ArtistModule
   ],
-  providers: [SearchService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {SearchService} from "./search.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ export class SearchComponent implements OnInit {
   private SearchForm:FormGroup;
   private SearchResults:string;
 
-  constructor(private fb:FormBuilder, private ss:SearchService) { }
+  constructor(private fb:FormBuilder, private ss:SearchService, private router:Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -31,6 +32,10 @@ export class SearchComponent implements OnInit {
           this.SearchResults = res.artists.items;
         }
       )
+  }
+
+  gotoArtist(artistid){
+    this.router.navigate(['/artist', artistid]);
   }
 
 }
