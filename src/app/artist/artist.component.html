@@ -1,6 +1,9 @@
-<p>
-  artist works!
-</p>
 <div class="artist-album">
-{{artistDetail?.name}}
+  <header class="artist-header">
+    <div *ngIf="artistDetail?.images.length>0">
+      <img class="artist-thumb" src="{{artistDetail?.images[0].url}}">
+    </div>
+    <h1>{{artistDetail?.name}}</h1>
+    <strong>Genre: </strong><small *ngFor="let x of artistDetail?.genres">{{x}}</small>
+  </header>
 </div>

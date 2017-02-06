@@ -9,8 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import {AppRouting} from "./app-routing.module";
 import {SearchModule} from "./search/search.module";
-import {ArtistModule} from "./artist/artist.module";
-
 
 
 @NgModule({
@@ -26,8 +24,7 @@ import {ArtistModule} from "./artist/artist.module";
     HttpModule,
     ReactiveFormsModule,
     AppRouting,
-    SearchModule,
-    ArtistModule
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

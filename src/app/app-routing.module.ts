@@ -11,10 +11,6 @@ const AppRoutes: Routes = [
   {
     path: 'about',
     component: AboutComponent
-  },
-  {
-    path: 'artist/:id',
-    component: ArtistComponent
   }
 ]
 
