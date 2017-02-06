@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import {AppRouting} from "./app-routing.module";
+import {SearchService} from "./search/search.service";
 
 
 
@@ -27,7 +28,7 @@ import {AppRouting} from "./app-routing.module";
     ReactiveFormsModule,
     AppRouting
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
