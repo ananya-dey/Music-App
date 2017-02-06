@@ -1,8 +1,6 @@
 <div class="artist-album">
   <header class="artist-header">
-    <div *ngIf="artistDetail?.images.length>0">
-      <img class="artist-thumb" src="{{artistDetail?.images[0].url}}">
-    </div>
+    <img class="artist-thumb" src="{{artistDetail?.images[0].url}}">
     <h1>{{artistDetail?.name}}</h1>
     <strong>Genre: </strong><small *ngFor="let x of artistDetail?.genres">{{x}}</small>
   </header>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ArtistService} from "../artist.service";
 
 @Component({
@@ -12,23 +12,27 @@ export class AlbumComponent implements OnInit {
   private album:string;
   private subscription:Subscription;
   private albumD:string;
-  constructor(private route:ActivatedRoute, private as:ArtistService) { }
+  constructor(private route:ActivatedRoute, private as:ArtistService,private router:Router) { }
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(
       res=>{
         this.album=res['id'];
-        this.getAlbumDetail();}
+        this.getAllAlbum();}
     )
   }
 
-  getAlbumDetail(){
-    this.as.getAlbum(this.album)
+  getAllAlbum(){
+    this.as.getAllAlbum(this.album)
       .subscribe(
           res=>{
             this.albumD = res.items;
           }
       )
+  }
+
+  gotoAlbumDetail(albumid){
+    this.router.navigate(['/album', albumid]);
   }
 
 }

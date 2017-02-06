@@ -4,6 +4,7 @@ import {ArtistComponent} from "./artist.component";
 import {ArtistService} from "./artist.service";
 import {ArtistRouting} from "./artist-routing.module";
 import {AlbumComponent} from "./album/album.component";
+import {AlbumDetailComponent} from "./album-detail/album-detail.component";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {AlbumComponent} from "./album/album.component";
   ],
   declarations: [
     ArtistComponent,
-    AlbumComponent
+    AlbumComponent,
+    AlbumDetailComponent
   ],
   providers:[
     ArtistService

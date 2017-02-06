@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ArtistService {
   private ArtistUrl:string;
+  private AllAlbumUrl:string;
   private AlbumUrl:string;
 
   constructor(private http:Http) { }
@@ -14,9 +15,15 @@ export class ArtistService {
     return this.http.get(this.ArtistUrl).map(res=>res.json());
   }
 
-  getAlbum(Aid:string){
-    this.AlbumUrl = 'https://api.spotify.com/v1/artists/'+Aid+'/albums';
+  getAllAlbum(Aid:string){
+    this.AllAlbumUrl = 'https://api.spotify.com/v1/artists/'+Aid+'/albums';
+    return this.http.get(this.AllAlbumUrl).map(res=>res.json());
+  }
+
+  getAlbumDetail(id:String){
+    this.AlbumUrl = 'https://api.spotify.com/v1/albums/'+id;
     return this.http.get(this.AlbumUrl).map(res=>res.json());
   }
+
 
 }
