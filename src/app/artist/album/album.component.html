@@ -1,0 +1,16 @@
+<p>
+  album works!
+</p>
+<div class="artist-albums">
+  <div class="row">
+    <div *ngFor="let x of albumD">
+      <div class="col-md-3">
+        <div class="well album">
+          <img class="album-thumb img-thumbnail" src="{{x.images[0].url}}">
+          <h4>{{x.name}}</h4>
+          <button class="btn btn-block btn-danger">Album Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

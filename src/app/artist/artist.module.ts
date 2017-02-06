@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {ArtistComponent} from "./artist.component";
 import {ArtistService} from "./artist.service";
 import {ArtistRouting} from "./artist-routing.module";
+import {AlbumComponent} from "./album/album.component";
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import {ArtistRouting} from "./artist-routing.module";
     ArtistRouting
   ],
   declarations: [
-    ArtistComponent
+    ArtistComponent,
+    AlbumComponent
   ],
   providers:[
     ArtistService
